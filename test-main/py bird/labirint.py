@@ -53,7 +53,7 @@ class Ground():
 class Pipes():
     def __init__(self):
         self.gate = random.randint(100, HEIGHT - 200)
-        self.gap = random.randint(45, 55) 
+        self.gap = random.randint(40, 50) 
 
         self.top_image = pygame.image.load('assets/top-pipe.png')
         self.top_rect = self.top_image.get_rect()
@@ -112,8 +112,8 @@ class Bird(pygame.sprite.Sprite):
 
         elif self.speed < 0:
             self.angle -= 1
-            if self.angle < -40:
-                self.angle = -40
+            if self.angle < -35:
+                self.angle = -35
         self.image = pygame.transform.rotate(self.image_orig, self.angle)
 
         if game.state == 'play':
@@ -126,7 +126,7 @@ class Bird(pygame.sprite.Sprite):
             if self.rect.collidelistall([pipes.top_rect, pipes.bot_rect]):
                 self.image_orig = pygame.image.load('assets/die_bird.png')
                 game.state = 'over'
-                self.angle = -35            
+                self.angle = -45            
 
 class GameManager():
     def __init__(self):

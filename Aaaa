@@ -1,0 +1,35 @@
+import pygame
+
+pygame.init()
+
+screen=pygame.display.set_mode([360,360])
+
+fon_surf=pygame.image.load('saturn.jpg').convert()
+
+fon_surf.set_colorkey((255,255,255))
+
+fon_rect=fon_surf.get_rect(center=(200,150))
+
+screen.blit(fon_surf,fon_rect)
+
+pers1_surf=pygame.image.load('shuttle.png')
+
+pers1_rect=pers1_surf.get_rect(bottomright=(300,350))
+
+screen.blit(pers1_surf,pers1_rect)
+
+pygame.display.update()
+
+pygame.display.update()
+
+running=True
+
+while running:
+
+for event in pygame.event.get():
+
+if event.type==pygame.quit:
+
+running=False
+
+pygame.quit()
